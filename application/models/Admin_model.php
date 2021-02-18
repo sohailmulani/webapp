@@ -1,0 +1,13 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Admin_model extends CI_Model{
+
+  // Fetch admin user via username
+  public function getByUsername($username){
+    $this->db->where('username',$username);
+    $admin = $this->db->get('admin')->row_array();
+    return $admin;
+  }
+}
+?>
